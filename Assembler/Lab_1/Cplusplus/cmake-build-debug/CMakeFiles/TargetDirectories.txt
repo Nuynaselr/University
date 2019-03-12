@@ -1,0 +1,3 @@
+/home/np/Рабочий стол/LAB_SISPRO/Lab_1/Cplusplus/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/np/Рабочий стол/LAB_SISPRO/Lab_1/Cplusplus/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/np/Рабочий стол/LAB_SISPRO/Lab_1/Cplusplus/cmake-build-debug/CMakeFiles/Cplusplus.dir

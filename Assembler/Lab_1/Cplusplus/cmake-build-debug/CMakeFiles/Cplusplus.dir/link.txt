@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Cplusplus.dir/main.cpp.o CMakeFiles/Cplusplus.dir/ReadFile.cpp.o  -o Cplusplus 

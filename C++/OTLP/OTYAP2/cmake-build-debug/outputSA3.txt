@@ -1,0 +1,10 @@
+do a = 5 / 5 loop while a < 600 Correct construction
+
+
+do 
+do 
+do a = a + 6 loop 
+Error: Expects while
+a < 78 loop 
+Error: Expects while
+a < 50 loop while a < 600 

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/lr3lp.dir/main.cpp.o  -o lr3lp.exe -Wl,--out-implib,liblr3lp.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

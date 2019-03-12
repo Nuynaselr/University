@@ -1,0 +1,36 @@
+Index | Symbol	
+--------------
+0	|  do -> lDo	
+1	|  a -> lVar	
+2	|  = -> lAs	
+3	|  5 -> lConst	
+4	|  / -> lAo	
+5	|  5 -> lConst	
+6	|  loop -> lLoop	
+7	|  while -> lWhile	
+8	|  a -> lVar	
+9	|  < -> LRel	
+10	|  600 -> lConst	
+0	|  do -> lDo	
+0	|  do -> lDo	
+0	|  do -> lDo	
+1	|  a -> lVar	
+2	|  = -> lAs	
+3	|  a -> lVar	
+4	|  + -> lAo	
+5	|  6 -> lConst	
+6	|  loop -> lLoop	
+7	|  _ -> Wrong	
+8	|  a -> lVar	
+9	|  < -> LRel	
+10	|  78 -> lConst	
+11	|  loop -> lLoop	
+12	|  _ -> Wrong	
+13	|  a -> lVar	
+14	|  < -> LRel	
+15	|  50 -> lConst	
+16	|  loop -> lLoop	
+17	|  while -> lWhile	
+18	|  a -> lVar	
+19	|  < -> LRel	
+20	|  600 -> lConst	

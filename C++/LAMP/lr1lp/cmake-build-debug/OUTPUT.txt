@@ -1,0 +1,10 @@
+5.2
+11.7778
+Error: DivisionByZero
+7.2
+11.8
+11.3333
+Error: DivisionByZero
+Error: DivisionByZero
+6
+28

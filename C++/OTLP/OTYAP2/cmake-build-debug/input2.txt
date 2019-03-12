@@ -1,0 +1,14 @@
+do
+do
+a = 5 + 6 _ while a < 100
+loop while a < a
+
+do
+do
+a = a + 6 loop while a < 50
+loop while a < 299
+
+do
+do
+a _ a + _ loop while a < 68
+loop while a > 36

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/fraction.cpp
+fraction.h
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/fraction.h
+
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/fraction.h
+iostream
+-
+
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/main.cpp
+iostream
+-
+mixedfractions.h
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/mixedfractions.h
+
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/mixedfractions.cpp
+mixedfractions.h
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/mixedfractions.h
+
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/mixedfractions.h
+fraction.h
+/cygdrive/c/Users/Nikita/Documents/GitHub/C_plus_plus/fraction/fraction.h
+

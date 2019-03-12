@@ -1,0 +1,6 @@
+do z = 1 + 
+Error: Expects variable or constant
+while x < 
+Error: Expects constant
+
+do z = 1 + g loop while z < 5 Correct construction

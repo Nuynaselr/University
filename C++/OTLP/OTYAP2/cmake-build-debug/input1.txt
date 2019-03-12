@@ -1,0 +1,8 @@
+do
+a _ 5 _ 5 loop while a < 100
+
+_do
+a = 5 + 6 _ while a < 100
+
+do
+a = 5 a 5 loop _ a < a

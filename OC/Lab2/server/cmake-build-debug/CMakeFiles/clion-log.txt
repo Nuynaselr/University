@@ -1,0 +1,4 @@
+/opt/clion/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/np/Рабочий стол/Lab_OC/Lab2/server"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/np/Рабочий стол/Lab_OC/Lab2/server/cmake-build-debug

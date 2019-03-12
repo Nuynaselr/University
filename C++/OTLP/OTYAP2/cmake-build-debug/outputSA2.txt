@@ -1,0 +1,16 @@
+do 
+do a = 5 + 6 
+Error: Expects loop
+while a < 100 loop while a < 
+Error: Expects constant
+
+do 
+do a = a + 6 loop while a < 50 loop while a < 299 Correct construction
+
+
+do 
+do a 
+Error: Expects a sign assignment
+a + 
+Error: Expects variable or constant
+loop while a < 68 loop while a > 36 

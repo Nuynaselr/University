@@ -1,0 +1,23 @@
+Index | Symbol	
+--------------
+0	|  do -> lDo	
+1	|  z -> lVar	
+2	|  = -> lAs	
+3	|  1 -> lConst	
+4	|  + -> lAo	
+5	|  loop -> lLoop	
+6	|  while -> lWhile	
+7	|  x -> lVar	
+8	|  < -> LRel	
+9	|  a -> lVar	
+0	|  do -> lDo	
+1	|  z -> lVar	
+2	|  = -> lAs	
+3	|  1 -> lConst	
+4	|  + -> lAo	
+5	|  g -> lVar	
+6	|  loop -> lLoop	
+7	|  while -> lWhile	
+8	|  z -> lVar	
+9	|  < -> LRel	
+10	|  5 -> lConst	

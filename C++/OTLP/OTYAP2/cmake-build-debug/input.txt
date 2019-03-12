@@ -1,0 +1,5 @@
+    do
+        z = 1 + loop
+        while x < a
+
+do z = 1 + g loop while z < 5

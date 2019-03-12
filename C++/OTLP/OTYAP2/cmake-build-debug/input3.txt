@@ -1,0 +1,9 @@
+do
+a = 5 / 5 loop while a < 600
+
+do
+do
+do
+a = a + 6 loop _ a < 78
+loop _ a < 50
+loop while a < 600

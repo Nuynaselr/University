@@ -1,0 +1,17 @@
+do a 
+Error: Expects a sign assignment
+5 
+Error: Expects operator
+5 loop while a < 100 
+Error: Expects and/or or new structure
+a = 5 + 6 
+Error: Expects loop
+while a < 100 Correct construction
+
+
+do a = 5 
+Error: Expects operator
+5 loop 
+Error: Expects while
+a < 
+Error: Expects constant

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/OCS.dir/main.cpp.o  -o OCS.exe -Wl,--out-implib,libOCS.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

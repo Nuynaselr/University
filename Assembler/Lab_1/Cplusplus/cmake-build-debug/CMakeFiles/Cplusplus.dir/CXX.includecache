@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/np/Рабочий стол/LAB_SISPRO/Lab_1/Cplusplus/ReadFile.h
+iostream
+-
+fstream
+-
+string
+-
+
+/home/np/Рабочий стол/LAB_SISPRO/Lab_1/Cplusplus/main.cpp
+iostream
+-
+ReadFile.h
+/home/np/Рабочий стол/LAB_SISPRO/Lab_1/Cplusplus/ReadFile.h
+

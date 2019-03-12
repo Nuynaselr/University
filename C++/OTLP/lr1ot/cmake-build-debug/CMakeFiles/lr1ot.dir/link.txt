@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/lr1ot.dir/main.cpp.o  -o lr1ot.exe -Wl,--out-implib,liblr1ot.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
