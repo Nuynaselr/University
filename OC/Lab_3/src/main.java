@@ -40,14 +40,11 @@ class Administrator {
             try
             {
                 sem.acquire();
-                Semaphore semaph = new Semaphore(1, true);
-                semaph.acquire();
                 System.out.println("Id Writer: " + this.id +"\nEnter your message for Writer: ");
                 Scanner in = new Scanner(System.in);
                 message = in.next();
                 System.out.println("Your message: " + message);
                 System.out.println(this.messageCloseWriter);
-                semaph.release();
                 sem.release();
             }
             catch(InterruptedException e)
@@ -73,8 +70,7 @@ class Administrator {
         Semaphore sem = new Semaphore(2, true);
         int id = 1;
         for (int i = 0; i < this.countProcess; i++) {
-            Writer check = new Writer(sem, id);
-            check.start();
+            new Writer(sem, id).start();
             id ++;
         }
 

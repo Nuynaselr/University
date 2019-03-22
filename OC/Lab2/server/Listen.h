@@ -1,7 +1,9 @@
 //
 // Created by np on 09.03.19.
 //
-#import <iostream>
+#include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 /*
@@ -16,29 +18,86 @@ using namespace std;
 #define SERVER_LISTEN_H
 class Listen{
 private:
-    char[] message = new char[1024];
-    char[] array_themes = ["Maia", "Breeze", "WhiteOnBlack", "BlackOnWhite"];
+    bool flag_check_true_enter = false;
 
-    char[] command_change_color = "konsoleprofile colors=";
+    string message;
+    string array_themes[4] = { "Maia", "Breeze", "WhiteOnBlack", "BlackOnWhite"};
 
-    void delete_space(iostream fin){
-        while (fin.peek() == CR || fin.peek() == EOL || fin.peek() == TAB || fin.peek() == SPACE) {
-            fin.get();
-        }
-    }
+    string list_check_command[7] = {"1", "2", "3", "4", "start_color", "close", "close_server"};
 
-    void check_command(){
-        for (int j = 0; j < 4; j++) {
-            for (int i = 0; i < sizeof(this->message); i++) {
-                if (this->message[i] != )
+    string command_change_color = "konsoleprofile colors=";
+
+    bool check_true_command(string mess){
+        for (int i = 0; i < 7; i++){
+            if (mess == this->list_check_command[i]){
+                this->flag_check_true_enter = true;
+                return true;
+            } else if (i == 6  && !this->flag_check_true_enter){
+                return false;
             }
         }
     }
 
 public:
-    void enter_message(iostream cin){
-        getline(this->delete_space(cin), message);
+    Listen(){}
+
+    void enter_message(){
+        string mess;
+        cin >> mess;
+
+        this->message = mess;
+        while(!this->check_true_command(this->message)){
+            cout << "Error: incorrect enter. Check entered command.\n"
+                    "Available command:\n"
+                    " help - command to call for help\n"
+                    " star_color - command for making initial color\n"
+                    " close - close client\n"
+                    " close_server - close server\n"
+                    " available colors (only a number is required):\n "
+                    "   1 Maia\n"
+                    "   2 Breeze\n"
+                    "   3 WhiteOnBlack\n"
+                    "   4 BlackOnWhite" << endl;
+            enter_message();
+        }
     }
+
+    int get_size_message(){
+        return sizeof(this->message.c_str());
+    }
+
+    void get_list_color(){
+        cout << "List color: " << endl;
+        for(int i = 0; i < 4; i++){
+            cout << i + 1 << " " + this->array_themes[i] << endl;
+        }
+    }
+
+    string get_message(){
+       return this->message;
+    }
+
+    string get_command_color(){
+        string command = this->command_change_color + array_themes[atoi(this->message.c_str()) - 1];
+        return command;
+    }
+
+    void set_color(string row_color){
+        this->message = row_color;
+    }
+
+    void help(){
+        cout << " help - command to call for help\n"
+                " star_color - command for making initial color\n"
+                " close - close client\n"
+                " close_server - close server\n"
+                " available colors (only a number is required):\n "
+                "   1 Maia\n"
+                "   2 Breeze\n"
+                "   3 WhiteOnBlack\n"
+                "   4 BlackOnWhite" << endl;
+    }
+
 
 };
 #endif //SERVER_LISTEN_H
