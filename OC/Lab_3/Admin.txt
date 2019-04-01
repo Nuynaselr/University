@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2019-04-01T21:39:51</date>
+  <millis>1554140391515</millis>
+  <sequence>0</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>logick.Administrator</class>
+  <method>runGUI</method>
+  <thread>1</thread>
+  <message>Start GUI</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:52</date>
+  <millis>1554140392211</millis>
+  <sequence>1</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.MessageBox</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>Create window</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:57</date>
+  <millis>1554140397120</millis>
+  <sequence>2</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.MessageBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Enter count writer</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:57</date>
+  <millis>1554140397127</millis>
+  <sequence>3</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.MessageBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Recorded count writer</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:57</date>
+  <millis>1554140397135</millis>
+  <sequence>4</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.MessageBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Count output</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:57</date>
+  <millis>1554140397144</millis>
+  <sequence>5</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.MessageBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Create Writer</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:57</date>
+  <millis>1554140397148</millis>
+  <sequence>6</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>logick.Administrator</class>
+  <method>runGUIWriter</method>
+  <thread>16</thread>
+  <message>Create Thread: GUI</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:57</date>
+  <millis>1554140397267</millis>
+  <sequence>7</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox</class>
+  <method>run</method>
+  <thread>16</thread>
+  <message>Create window</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:57</date>
+  <millis>1554140397349</millis>
+  <sequence>8</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox</class>
+  <method>run</method>
+  <thread>16</thread>
+  <message>Create window</message>
+</record>
+<record>
+  <date>2019-04-01T21:39:57</date>
+  <millis>1554140397351</millis>
+  <sequence>9</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>logick.Administrator</class>
+  <method>runGUIWriter</method>
+  <thread>16</thread>
+  <message>Well done</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:05</date>
+  <millis>1554140405593</millis>
+  <sequence>10</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Read message</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:05</date>
+  <millis>1554140405600</millis>
+  <sequence>11</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Send message</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:05</date>
+  <millis>1554140405607</millis>
+  <sequence>12</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Send message close</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:05</date>
+  <millis>1554140405613</millis>
+  <sequence>13</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>logick.Administrator</class>
+  <method>printGUI</method>
+  <thread>16</thread>
+  <message>enter message in GUI</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:05</date>
+  <millis>1554140405623</millis>
+  <sequence>14</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Enter message in admin</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:05</date>
+  <millis>1554140405640</millis>
+  <sequence>15</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Close window</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:09</date>
+  <millis>1554140409718</millis>
+  <sequence>16</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Read message</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:09</date>
+  <millis>1554140409722</millis>
+  <sequence>17</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Send message</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:09</date>
+  <millis>1554140409728</millis>
+  <sequence>18</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Send message close</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:09</date>
+  <millis>1554140409734</millis>
+  <sequence>19</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>logick.Administrator</class>
+  <method>printGUI</method>
+  <thread>16</thread>
+  <message>enter message in GUI</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:09</date>
+  <millis>1554140409749</millis>
+  <sequence>20</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Enter message in admin</message>
+</record>
+<record>
+  <date>2019-04-01T21:40:09</date>
+  <millis>1554140409759</millis>
+  <sequence>21</sequence>
+  <logger>logick.Administrator</logger>
+  <level>INFO</level>
+  <class>GUI.WriterBox$1</class>
+  <method>actionPerformed</method>
+  <thread>16</thread>
+  <message>Close window</message>
+</record>
+</log>
