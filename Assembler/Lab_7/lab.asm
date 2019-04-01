@@ -38,7 +38,7 @@ section .data
     answer_mess dw "Hey yo. IT is adngel answer: "
 
     check dq 0.0
-    check2 dq 0.0
+
 
     param_a dq 1.0
     param_b dq 1.0
@@ -49,7 +49,6 @@ section .data
 
     answer dq 0.0
     param_esp dq 0.0001
-    zero dq 0.0
 
     format_text dd ' %s ', 0x0a
     format_textnl dd ' %s', 0x0a
@@ -85,10 +84,6 @@ loopt:
     fstp st0 ; чистка 
 
     fld qword [check]
-    fstp qword [check2]
-    fstp st0 ; чистка 
-
-    fld qword [check]
 
     fld qword [answer]
     fadd
@@ -116,10 +111,9 @@ loopt:
     fstp qword [param_b]
     fstp st0 ; чистка 
 
-    call checked
-
     fld qword [param_esp]
-    fld qword [check2]
+    fld qword [check]
+    fabs
     fcom
     fstsw ax
     sahf
@@ -127,25 +121,6 @@ loopt:
     
     ja loopt
     jbe less
-
-
-checked:
-    fld qword [zero]
-    fld qword [check2]
-    fcom
-    fstsw ax
-    sahf
-    fstp st0 ; чистка
-    jb upgrade
-    ret
-
-upgrade:
-    fld qword [check2]
-    fld qword [param_one]
-    fmul
-    fstp qword [check2]
-    fstp st0 ; чистка
-    ret
 
 less:
     PRINT answer_mess, format_text
