@@ -53,18 +53,33 @@ public class MessageBox extends JFrame{
     private void tapButton(){
         sendButtonAdmin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                logger.info("Enter count writer");
-                admin.setCountProcess(Integer.parseInt(adminFiled.getText()));
-                logger.info("Recorded count writer");
-                logger.info("Count output");
-                adminPane.setText(adminPane.getText() + "\n" + "" + admin.getCountProcess());
 
-                try {
-                    logger.info("Create Writer");
-                    admin.runGUIWriter();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
+                try{
+                    int count = Integer.parseInt(adminFiled.getText());
+                    if (count > 0){
+                        logger.info("Enter count writer");
+                        admin.setCountProcess(Integer.parseInt(adminFiled.getText()));
+                        logger.info("Recorded count writer");
+                        logger.info("Count output");
+                        adminPane.setText(adminPane.getText() + "\n" + "" + admin.getCountProcess());
+
+                        try {
+                            logger.info("Create Writer");
+                            admin.runGUIWriter();
+                        } catch (IOException e1) {
+                            e1.printStackTrace();
+                        }
+                    }
+                    else {
+                        logger.info("Incorrect data");
+                        adminPane.setText(adminPane.getText() + "\n" + "Error incorrect data");
+                    }
+                } catch (NumberFormatException ex){
+                    logger.info("Incorrect data");
+                    adminPane.setText(adminPane.getText() + "\n" + "Error incorrect data" + ex.toString());
                 }
+
+
             }
         });
 

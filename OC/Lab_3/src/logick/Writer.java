@@ -49,7 +49,6 @@ public class Writer extends Thread {
             this.message = "Writer " + this.id + " Text: " + message;
             admin.setMessage(this.message);
             admin.setMessageClose(this.messageCloseWriter);
-            admin.printGUI();
             admin.print();
             sem.release();
         }

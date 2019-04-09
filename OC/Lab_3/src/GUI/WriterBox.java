@@ -16,12 +16,13 @@ public class WriterBox extends  JFrame implements Runnable{
     private static final Logger logger = Logger.getLogger(Administrator.class.getName());
     private FileHandler fh;
 
+    private boolean start = true;
+
     private JTextPane writerPane;
     private JPanel panelWriter;
     private JButton sendButton;
     private JTextField textFieldWriter;
 
-    private String message;
     private Administrator admin;
     private Semaphore sem;
     private String messageCloseWriter;
@@ -46,7 +47,13 @@ public class WriterBox extends  JFrame implements Runnable{
     }
 
     private boolean check_row(String row){
-        return row.equals("+") || row.equals("-") || row.equals("/") || row.equals("*");
+        for (int i = 0; i < row.length(); i++){
+            char ch = row.charAt(i);
+            if(row.charAt(i) != '+' && row.charAt(i) != '-' && row.charAt(i) != '*' && row.charAt(i) != '/'){
+                return false;
+            }
+        }
+        return true;
     }
 
     public String getMessageClose(){
@@ -65,18 +72,33 @@ public class WriterBox extends  JFrame implements Runnable{
 
             sendButton.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
+                    String message = "-";
+
+
                     logger.info("Read message");
                     message = textFieldWriter.getText();
-                    admin.setMessage("Writer " + id + " Message: " + textFieldWriter.getText());
-                    logger.info("Send message");
+                    if (check_row(message)) {
+                        admin.setMessage("Writer " + id + " Message: " + textFieldWriter.getText());
+                        logger.info("Send message");
 
-                    admin.setMessageClose(messageCloseWriter);
-                    logger.info("Send message close");
-                    admin.printGUI();
-                    logger.info("Enter message in admin");
-                    setVisible(false);
-                    setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-                    logger.info("Close window");
+                        admin.setMessageClose(messageCloseWriter);
+                        logger.info("Send message close");
+                        admin.printGUI();
+                        logger.info("Enter message in admin");
+                        textFieldWriter.setText("");
+                        start = false;
+
+                    } else if(message.equals("?")){
+                        setVisible(false);
+                        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                        logger.info("Close window");
+                    }
+                    else {
+                        logger.info("Incorrect data");
+                        writerPane.setText(writerPane.getText() + "\n" + "Error incorrect data");
+                    }
+
+
                 }
             });
 

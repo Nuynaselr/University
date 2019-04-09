@@ -17,6 +17,8 @@ public class Administrator{
     private String message = "";
     private String messageClose = "";
 
+    private int id = 1;
+
     public Administrator() throws IOException {
         fh = new FileHandler("/home/np/Рабочий стол/Lab_OC/Lab_3/Admin.txt");
         logger.addHandler(fh);
@@ -64,8 +66,8 @@ public class Administrator{
 
     public void run(){
         logger.info("Create Thread: console");
-        Semaphore sem = new Semaphore(1, true);
-        int id = 1;
+        Semaphore sem = new Semaphore(2, true);
+
         for (int i = 0; i < this.countProcess; i++) {
             new Writer(sem, id, this).start();
             id ++;
@@ -76,8 +78,7 @@ public class Administrator{
 
     public void runGUIWriter() throws IOException {
         logger.info("Create Thread: GUI");
-        Semaphore semW = new Semaphore(1, true);
-        int id = 1;
+        Semaphore semW = new Semaphore(2, true);
         for (int i = 0; i < this.countProcess; i++) {
             new WriterBox(semW, id, this).run();
             id ++;
