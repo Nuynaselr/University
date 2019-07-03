@@ -3,7 +3,8 @@ import os
 
 video = cv2.VideoCapture('D.mp4')
 extension_image = ('.jpeg', '.png')
-dir_saved_img = 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\SaveImage'
+dir_saved_img_win = 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\SaveImage'
+dir_saved_img_unix = '/home/np/University/SummerPractice/SaveImage'
 
 # Directory for saved image
 os.chdir(dir_saved_img)
