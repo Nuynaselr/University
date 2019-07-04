@@ -9,7 +9,8 @@ rotate_matrix = [[0, 0],
 
 video = cv2.VideoCapture('D.mp4')
 extension_image = ('.jpeg', '.png')
-dir_saved_img = 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\SaveImage'
+dir_saved_img_win = 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\SaveImage'
+dir_saved_img_unix = '/home/np/University/SummerPractice/SaveImage'
 
 # Directory for saved image
 os.chdir(dir_saved_img)
@@ -77,6 +78,7 @@ def rotate_image(angle):
 
 
 if __name__ == '__main__':
+
     # source_image = cv2.imread('C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg')
 
     rotate_image(0)
@@ -88,3 +90,12 @@ if __name__ == '__main__':
     # cv2.imshow("Image", rotated)
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
+
+    # aaa = cv2.imread('C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg')
+    # # cv2.imshow("Image", aaa)
+    # # cv2.waitKey(0)
+    # # cv2.destroyAllWindows()
+    #
+    # print(aaa[0])
+
+    save_image()
