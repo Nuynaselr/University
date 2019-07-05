@@ -1,4 +1,3 @@
-import copy
 import os
 import cv2
 import numpy
@@ -13,7 +12,7 @@ dir_saved_img_win = 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPra
 dir_saved_img_unix = '/home/np/University/SummerPractice/SaveImage'
 
 # Directory for saved image
-os.chdir(dir_saved_img)
+os.chdir(dir_saved_img_unix)
 
 # extension image
 extension_image = extension_image[0]
@@ -47,7 +46,7 @@ def save_image():
 
 
 def rotate_image(angle):
-    source_image = cv2.imread('C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg')
+    source_image = cv2.imread('/home/np/University/SummerPractice/Rick.jpg')
 
     angle_rad = math.radians(angle)
     height, width, chanel = source_image.shape
@@ -63,11 +62,11 @@ def rotate_image(angle):
     for i in range(height):
         for j in range(width):
             big_i = int(
-                (i - half_height) * math.cos(angle_rad) - (j - half_width) * math.sin(angle_rad) + radius * math.cos(
-                    const_b))
+                (i - half_height) * math.cos(angle_rad) - (j - half_width) * math.sin(angle_rad)
+                + radius * math.cos(const_b))
             big_j = int(
-                (i - half_height) * math.sin(angle_rad) + (j - half_width) * math.cos(angle_rad) + radius * math.cos(
-                    const_b))
+                (i - half_height) * math.sin(angle_rad) + (j - half_width) * math.cos(angle_rad)
+                + radius * math.cos(const_b))
 
             if height > big_i >= 0 and width > big_j >= 0:
                 dest_image[i][j] = source_image[big_i][big_j]
@@ -75,13 +74,14 @@ def rotate_image(angle):
     cv2.imshow("Image", dest_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+    return True
 
 
 if __name__ == '__main__':
 
     # source_image = cv2.imread('C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg')
 
-    rotate_image(0)
+    rotate_image(45)
 
     # (h, w, d) = aaa.shape
     # center = (w // 2, h // 2)
@@ -97,5 +97,3 @@ if __name__ == '__main__':
     # # cv2.destroyAllWindows()
     #
     # print(aaa[0])
-
-    save_image()
