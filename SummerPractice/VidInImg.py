@@ -1,11 +1,8 @@
-import copy
 import os
 import cv2
 import numpy
 import math
-
-rotate_matrix = [[0, 0],
-                 [0, 0]]
+from scipy import interpolate
 
 video = cv2.VideoCapture('D.mp4')
 extension_image = ('.jpeg', '.png')
@@ -13,18 +10,10 @@ dir_saved_img_win = 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPra
 dir_saved_img_unix = '/home/np/University/SummerPractice/SaveImage'
 
 # Directory for saved image
-os.chdir(dir_saved_img)
+os.chdir(dir_saved_img_win)
 
 # extension image
 extension_image = extension_image[0]
-
-
-def create_rotate_matrix(angle):
-    rotate_matrix[0][0] = numpy.cos(angle)
-    rotate_matrix[0][1] = -numpy.sin(angle)
-
-    rotate_matrix[1][0] = numpy.sin(angle)
-    rotate_matrix[1][1] = numpy.cos(angle)
 
 
 def save_image():
@@ -60,6 +49,8 @@ def rotate_image(angle):
     radius = math.sqrt(half_height ** 2 + half_width ** 2)
     const_b = math.atan2(half_height, half_width)
 
+    array_width = numpy.zeros((1, width, 3), numpy.uint8)
+
     for i in range(height):
         for j in range(width):
             big_i = int(
@@ -70,18 +61,28 @@ def rotate_image(angle):
                     const_b))
 
             if height > big_i >= 0 and width > big_j >= 0:
-                dest_image[i][j] = source_image[big_i][big_j]
+                array_width[0][j] = source_image[big_i][big_j]
 
-    cv2.imshow("Image", dest_image)
+    image_tensor = numpy.indices((height, width))
+    x_new = image_tensor[0]
+    y_new = image_tensor[1]
+    x = dest_image[1]
+    y = dest_image[0]
+    z = dest_image[2]
+    tck = interpolate.bisplrep(height, width, dest_image, s=0)
+    znew = interpolate.bisplev(x_new[:, 0], y_new[0, :], tck)
+
+    cv2.imwrite('Image.jpg', znew)
+
+    # cv2.imshow("Image", bicubic_img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
-
     # source_image = cv2.imread('C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg')
 
-    rotate_image(0)
+    rotate_image(45)
 
     # (h, w, d) = aaa.shape
     # center = (w // 2, h // 2)
@@ -97,5 +98,3 @@ if __name__ == '__main__':
     # # cv2.destroyAllWindows()
     #
     # print(aaa[0])
-
-    save_image()
