@@ -45,6 +45,29 @@ def save_image():
     cv2.destroyAllWindows()
 
 
+def cubic_polynomial(p, p2, p3, p4, x):
+    answer = 0.5*(p4 - p + 3*(p2 - p3)) * (x**3) + (p - 2.5*p2 + 2*p3 - 0.5*p4) * (x**2) + 0.5 * (p3 - p) * x + p2
+    return answer
+
+
+def rotate_bicubic(angle):
+    source_image = cv2.imread('/home/np/University/SummerPractice/Rick.jpg')
+
+    angle_rad = math.radians(angle)
+    height, width, chanel = source_image.shape
+
+    dest_image = numpy.zeros((height, width, 3), numpy.uint8)
+
+    half_width = width // 2
+    half_height = height // 2
+
+    radius = math.sqrt(half_height ** 2 + half_width ** 2)
+    const_b = math.atan2(half_height, half_width)
+
+    x, y, x_fract, y_fract, c0, c1, c2, c3, c = 0.0
+    c00, c10, c20, c30, c01, c11, c21, c31, c02, c12, c22, c32, c03, c13, c23, c33 = []
+
+
 def rotate_image(angle):
     source_image = cv2.imread('/home/np/University/SummerPractice/Rick.jpg')
 
