@@ -3,33 +3,27 @@ import cv2
 import numpy
 import math
 
-video = cv2.VideoCapture('D.mp4')
+
 extension_image = ('.jpeg', '.png')
-dir_saved_img_win = 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\SaveImage'
-dir_saved_img_unix = '/home/np/University/SummerPractice/SaveImage'
+dir_saved_img_win = '\\SaveImage'
+dir_saved_img_unix = '/SaveImage'
 
 # Directory for saved image
 
-os.chdir(dir_saved_img_win)
-
+os.chdir(os.getcwd() + dir_saved_img_win)
 
 # extension image
+extension_image = extension_image[0]
+
+number_frame = 1
 
 
-def save_image():
-    number_image = 1
+def cut_video_with_corner(path_file, angle):
+    video = cv2.VideoCapture(path_file)
+    # 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg'
     while video.isOpened():
         ret, frame = video.read()
-
-        # show video
-        cv2.imshow('frame', frame)
-
-        # save image in dir_saved_img
-        cv2.imwrite(str(number_image) + extension_image, frame)
-        number_image += 1
-
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        rotate_bicubic(frame, angle)
 
     video.release()
     cv2.destroyAllWindows()
@@ -43,8 +37,8 @@ def cubic_polynomial(a, b, c, d, x):
     return (d - a + 3.0 * (b - c))/2.0 * (x**3) + (a - 2.5 * b + 2 * c - d/2) * (x * x) + (c - a)/2 * x + b
 
 
-def rotate_bicubic(angle):
-    source_image = cv2.imread('C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg')
+def rotate_bicubic(image, angle):
+    source_image = image
 
     angle_rad = math.radians(angle)
     height, width, chanel = source_image.shape
@@ -113,14 +107,11 @@ def rotate_bicubic(angle):
 
         print('i - ', i, ' j - ', j)
 
-    cv2.imwrite('Imageaaa.jpg', dest_image)
-
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    cv2.imwrite('frame' + str(number_frame) + extension_image, dest_image)
 
 
-def rotate_image(angle):
-    source_image = cv2.imread('C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg')
+def rotate_image(image, angle):
+    source_image = angle
 
     angle_rad = math.radians(angle)
     height, width, chanel = source_image.shape
@@ -155,5 +146,9 @@ def rotate_image(angle):
 
 
 if __name__ == '__main__':
-    rotate_bicubic(45)
+    path_file = 'D.mp4'
+    angle = 45
+    # cut_video_with_corner(path_file, angle)
 
+    image = cv2.imread('C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg')
+    rotate_bicubic(image, angle)
