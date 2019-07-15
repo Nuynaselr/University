@@ -20,7 +20,7 @@ number_frame = 1
 
 def cut_video_with_corner(path_file, angle):
     video = cv2.VideoCapture(path_file)
-    # 'C:\\Users\\Nikita\\Documents\\GitHub\\University\\SummerPractice\\Rick.jpg'
+
     while video.isOpened():
         ret, frame = video.read()
         rotate_bicubic(frame, angle)
