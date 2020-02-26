@@ -69,9 +69,9 @@ public class Comment implements Serializable, Comparable<Comment> {
         try (Writer fileSave = new FileWriter("JsonSave.json")) {
             JSONObject writeFile = new JSONObject();
             writeFile.put("User", comments.getUser());
-            writeFile.put("Time", comments.getPostTime());
+            writeFile.put("PostTime", comments.getPostTime());
             writeFile.put("Text", comments.getCommentsText());
-            writeFile.put("Likes", comments.getLikesCount());
+            writeFile.put("Likes", "" + comments.getLikesCount());
             fileSave.write(writeFile.toString());
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,13 +83,7 @@ public class Comment implements Serializable, Comparable<Comment> {
             File file = new File(filePath);
             FileReader fileReader = new FileReader(file);
             BufferedReader reader = new BufferedReader(fileReader);
-            String allLine = "";
-            String line;
-            while((line = reader.readLine()) != null) {
-                 allLine.split(line);
-            }
             JSONObject json = new JSONObject(reader.readLine());
-
             comment.setUser(json.getString("User"));
             comment.setPostTime(LocalDateTime.parse(json.getString("PostTime")));
             comment.setCommentsText(json.getString("Text"));
@@ -110,8 +104,8 @@ public class Comment implements Serializable, Comparable<Comment> {
     @Override
     public String toString(){
         return "User: " + this.User +
-                "\n Time: " + this.PostTime +
-                "\n Text: " + this.CommentsText +
-                "\n Likes Count: " + this.LikesCount;
+                " Time: " + this.PostTime +
+                " Text: " + this.CommentsText +
+                " Likes Count: " + this.LikesCount;
     }
 }
