@@ -1,11 +1,9 @@
-package core;
+package Realization;
 
 import org.json.*;
 
 import java.io.*;
-import java.text.DateFormat;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Comment implements Serializable, Comparable<Comment> {
     private String User;
@@ -93,7 +91,6 @@ public class Comment implements Serializable, Comparable<Comment> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override

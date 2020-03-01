@@ -1,12 +1,7 @@
-import core.Comment;
-import core.Comments;
+import Realization.Comment;
+import Realization.Comments;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.util.Date;
 
 public class Main {
     public static void main(String arg[]){
@@ -33,13 +28,18 @@ public class Main {
         Comment.readFile("/home/np/University/Web/JsonSave.json", comRead);
         System.out.println(comRead.toString());
         comRead.setCommentsText("AAAAAAA");
+        com.setPostTime(LocalDateTime.now());
+
 
         Comments listCom = new Comments();
         listCom.addElement(com);
         listCom.addElement(comRead);
-
         System.out.println(listCom.toString());
-
+        listCom.listSort();
+        System.out.println(listCom.toString());
         listCom.writeFile();
+        Comments listComRead = new Comments();
+        listComRead.readFile("/home/np/University/Web/JsonSaveList.json");
+        System.out.println(listComRead.toString());
     }
 }
