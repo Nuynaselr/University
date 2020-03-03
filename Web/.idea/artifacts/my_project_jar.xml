@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="my-project:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/my_project_jar</output-path>
-    <root id="archive" name="my-project.jar">
-      <element id="module-output" name="my-project" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/json/json/20190722/json-20190722.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
