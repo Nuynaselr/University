@@ -5,13 +5,13 @@ import org.json.JSONObject;
 
 import java.io.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Comments implements Serializable {
     private List<Comment> comments;
     private final long UID = 1L; //????
+    private String rowError = "!!Error!!";
+    private boolean checkError = false;
 
     public Comments(){
         this.comments = new ArrayList<Comment>();
@@ -23,6 +23,14 @@ public class Comments implements Serializable {
 
     public long getUID() {
         return this.UID;
+    }
+
+    public String getRowError() {
+        return rowError;
+    }
+
+    public boolean isCheckError() {
+        return checkError;
     }
 
     public void addElementToIndex(int index, Comment comment){
@@ -37,8 +45,8 @@ public class Comments implements Serializable {
         this.comments.remove(index);
     }
 
-    public void writeFile(){
-        try (Writer fileSave = new FileWriter("JsonSaveList.json")) {
+    public void writeFile(String pathToFile){
+        try (Writer fileSave = new FileWriter(pathToFile)) {
             JSONObject writeFile = new JSONObject();
             int index = this.comments.size();
             fileSave.write('[');
@@ -79,7 +87,23 @@ public class Comments implements Serializable {
     }
 
     public void listSort(){
-        Collections.sort(this.comments);
+        try {
+            Collections.sort(this.comments);
+        }catch (Error e){
+            this.checkError = true;
+            this.rowError += "\n" + e;
+        }
+    }
+
+    public void deleteDuplicate() {
+        try {
+            Set<Comment> set = new HashSet<>(this.comments);
+            this.comments.clear();
+            this.comments.addAll(set);
+        }catch (Error e){
+            this.checkError = true;
+            this.rowError += "\n" + e;
+        }
     }
 
     @Override

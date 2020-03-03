@@ -36,7 +36,7 @@ public class ServerImpl extends UnicastRemoteObject implements Server {
     @Override
     public Comments deleteDuplicateAndSortList(Comments listComments) {
 //        listComments.checkDuplicate();
-        System.out.println("List received");
+        listComments.deleteDuplicate();
         listComments.listSort();
         return listComments;
     }

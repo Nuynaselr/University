@@ -3,7 +3,11 @@ package Client;
 import Realization.Comment;
 import Realization.Comments;
 import Server.Server;
+import org.json.JSONObject;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
@@ -39,19 +43,28 @@ public class Client {
         String hostPath = "rmi://localhost/DateBaseComments";
 
         try{
+
             System.setProperty(hostName, hostAddress);
 
             Server serv = (Server) Naming.lookup(hostPath);
 
-            System.out.println("Send message");
-            serv.checkMessage("Check contactAAAA");
-            System.out.println("Send message complete");
+            Comments testComments = new Comments();
+            testComments.readFile(filePathRead);
 
-            Comments testComments = createList();
-
-            System.out.println(testComments.toString());
+            System.out.println("File read. Sending to server.");
             testComments = serv.deleteDuplicateAndSortList(testComments);
-            System.out.println(testComments.toString());
+            if (testComments.isCheckError()) {
+                System.out.println("!!Error!!\nEnd of the program!!");
+                try (Writer fileSave = new FileWriter(filePathWrite)) {
+                    fileSave.write(testComments.getRowError());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else {
+                System.out.println("File received. Write on your device.");
+                testComments.writeFile(filePathWrite);
+            }
+
 
 
         }catch (MalformedURLException e) {
