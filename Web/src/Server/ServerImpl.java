@@ -22,6 +22,7 @@ public class ServerImpl extends UnicastRemoteObject implements Server {
             System.out.println("Initializing: " + serviceName);
 
             Registry registry = LocateRegistry.createRegistry(hostPort);
+
             registry.rebind(serviceName, service);
             System.out.println("Start: " + serviceName);
         } catch (Exception e) {
@@ -36,6 +37,7 @@ public class ServerImpl extends UnicastRemoteObject implements Server {
     @Override
     public Comments deleteDuplicateAndSortList(Comments listComments) {
 //        listComments.checkDuplicate();
+        System.out.println("File received");
         listComments.deleteDuplicate();
         listComments.listSort();
         return listComments;

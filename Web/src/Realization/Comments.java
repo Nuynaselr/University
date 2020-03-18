@@ -29,6 +29,10 @@ public class Comments implements Serializable {
         return rowError;
     }
 
+    public Comment getComments(int index) {
+        return comments.get(index);
+    }
+
     public boolean isCheckError() {
         return checkError;
     }
@@ -95,16 +99,28 @@ public class Comments implements Serializable {
         }
     }
 
+    public boolean eq(Comment com, Comment com2){
+        return com.getCommentsText().equals(com2.getCommentsText()) &&
+                com.getLikesCount() == com2.getLikesCount() &&
+                com.getUser().equals(com2.getUser());
+    }
+
     public void deleteDuplicate() {
         try {
-            Set<Comment> set = new HashSet<>(this.comments);
-            this.comments.clear();
-            this.comments.addAll(set);
+            for (int i = 0; i < this.comments.size(); i++){
+                for (int j = 0; j < this.comments.size(); j++){
+                    if(this.eq(this.getComments(i),this.getComments(j))){
+                        if (i != j)
+                        this.deleteComment(j);
+                    }
+                }
+            }
         }catch (Error e){
             this.checkError = true;
             this.rowError += "\n" + e;
         }
     }
+
 
     @Override
     public String toString() {

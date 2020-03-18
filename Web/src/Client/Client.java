@@ -34,8 +34,8 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        String filePathRead = args[0];
-        String filePathWrite = args[1];
+        String filePathRead = "/home/np/University/Web/JsonSaveList.json";
+        String filePathWrite = "/home/np/University/Web/JsonSaveList2.json";
 
         String hostAddress = "127.0.0.1";
         int hostPort = 1099;

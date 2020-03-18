@@ -34,12 +34,16 @@ public class Main {
         Comments listCom = new Comments();
         listCom.addElement(com);
         listCom.addElement(comRead);
+        listCom.addElement(com);
         System.out.println(listCom.toString());
         listCom.listSort();
         System.out.println(listCom.toString());
-        listCom.writeFile();
-        Comments listComRead = new Comments();
-        listComRead.readFile("/home/np/University/Web/JsonSaveList.json");
-        System.out.println(listComRead.toString());
+        listCom.writeFile("/home/np/University/Web/JsonSaveList.json");
+//        Comments listComRead = new Comments();
+//        listComRead.readFile("/home/np/University/Web/JsonSaveList.json");
+//        System.out.println(listComRead.toString());
+
+        System.out.println(listCom.getComments(0) == listCom.getComments(1));
+
     }
 }
